@@ -1,0 +1,28 @@
+{
+    "name": "nhinstein/lamapay",
+    "description": "Laravel Malaysia Payment",
+    "keywords": ["Laravel", "Laravel Malaysia Payment", "Laravel Payment"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sri Wahyuni",
+            "email": "nhinstein@gmail.com"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nhinstein\\Lamapay\\LadminServiceProvider"
+            ],
+            "aliases": {
+                "Lamapay": "Nhinstein\\Lamapay\\Lamapay"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Nhinstein\\Lamapay\\": "src/"
+        }
+    }
+}
