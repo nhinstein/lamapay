@@ -19,7 +19,7 @@
          */
         'auth' => [
           'user' => App\User::class,
-          'guard' => 'member'
+          'guard' => 'auth'
         ],
     
         /**

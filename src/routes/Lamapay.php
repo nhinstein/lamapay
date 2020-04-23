@@ -1,21 +1,21 @@
 <?php 
 
-namespace Hexters\Ladmin\Routes;
+namespace Nhinstein\Lamapay\Routes;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route as BaseRoute;
-use Nhintein\Lamapay\Http\Middleware\LadminLoginMiddleware;
+use Nhintein\Lamapay\Http\Middleware\LamapayLoginMiddleware;
 
-class Ladmin {
+class Lamapay {
 
   public static  function route($function) {
 
     BaseRoute::resource('/senangpay/callback', 'SenangPayController')->only(['index']);
     BaseRoute::resource('/paypal/callback', 'PayPalController')->only(['index']);
     BaseRoute::group([ 
-      'prefix' => 'member',
+      'prefix' => 'auth',
       'namespace' => 'Member',
-      'as' => 'member.'
+      'as' => 'auth.'
     ], function() use ($function) {
       Auth::routes([ 'register' => false ]);
       BaseRoute::group([
@@ -23,9 +23,9 @@ class Ladmin {
       ], function() use ($function) {
 
 
-        BaseRoute::resource('/topup', 'TopUpController');
-        BaseRoute::resource('/checkout', 'CheckoutController')->only(['show', 'store', 'update']);
-        BaseRoute::resource('/invoice', 'InvoiceController')->only(['index']);
+        // BaseRoute::resource('/topup', 'TopUpController');
+        // BaseRoute::resource('/checkout', 'CheckoutController')->only(['show', 'store', 'update']);
+        // BaseRoute::resource('/invoice', 'InvoiceController')->only(['index']);
 
         $function();
   

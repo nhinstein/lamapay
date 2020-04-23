@@ -29,7 +29,7 @@ class LamapayServiceProvider extends ServiceProvider
         /**
          * Load view template
          */
-        $this->loadViewsFrom( __DIR__ . '/../Resources/Views', 'ladmin');
+        $this->loadViewsFrom( __DIR__ . '/../Resources/Views', 'lamapay');
 
         /**
          * Publish 

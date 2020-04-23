@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
 
-class LadminAuthenticate extends Middleware {
+class LamapayAuthenticate extends Middleware {
 
     /**
      * Handle an incoming request.
@@ -32,8 +32,8 @@ class LadminAuthenticate extends Middleware {
      */
     protected function redirectTo($request) {
         if (! $request->expectsJson()) {
-            if(in_array(config('ladmin.auth.guard'), $request->guards)) {
-                return route('administrator.login');
+            if(in_array(config('lamapay.auth.guard'), $request->guards)) {
+                return route('login');
             } else {
                 return route('login');
             }

@@ -1,11 +1,11 @@
 <?php
 
-namespace Hexters\Ladmin\Http\Middleware;
+namespace Nhinstein\Lamapay\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class LadminGuestMiddleware {
+class LamapayGuestMiddleware {
     /**
      * Handle an incoming request.
      *
@@ -15,11 +15,11 @@ class LadminGuestMiddleware {
      */
     public function handle($request, Closure $next) {
 
-        if(auth()->guard(config('ladmin.auth.guard', 'web'))->check()) {
+        if(auth()->guard(config('lamapay.auth.guard', 'web'))->check()) {
             return redirect()->route('administrator.index');
         }
 
-        Auth::shouldUse(config('ladmin.auth.guard', 'web'));
+        Auth::shouldUse(config('lamapay.auth.guard', 'web'));
         return $next($request);
     }
 }
