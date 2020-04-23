@@ -9,9 +9,9 @@ class SenangPay {
   protected $sandbox;
 
   public function __construct() {
-    $this->marchantid = config('payment.senangpay.marchantid');
-    $this->secret = config('payment.senangpay.secret');
-    $this->sandbox = config('payment.senangpay.sandbox');
+    $this->marchantid = config('lamapay.senangpay.marchantid');
+    $this->secret = config('lamapay.senangpay.secret');
+    $this->sandbox = config('lamapay.senangpay.sandbox');
   }
 
   public function getMarchantid() {

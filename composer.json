@@ -9,7 +9,8 @@
             "email": "nhinstein@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "paypal/rest-api-sdk-php": "^1.14"},
     "extra": {
         "laravel": {
             "providers": [

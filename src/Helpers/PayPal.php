@@ -14,17 +14,24 @@ use PayPal\Api\PaymentExecution;
 
 
 class PayPal {
+
+  protected $marchantid;
+  protected $secret;
+  protected $sandbox;
+
+  public function __construct() {
+    $this->client = config('lamapay.paypal.client');
+    $this->secret = config('lamapay.paypal.secret');
+    $this->sandbox = config('lamapay.paypal.sandbox');
+  }
   
   public static function apiContext() {
     $apiContext = new \PayPal\Rest\ApiContext(
-            new \PayPal\Auth\OAuthTokenCredential(
-                env('PAYPAL_CIENT', 'AfN0gOqlSeCBFHPcL-OF4CnB5p-LkA234zGK91BlzSr6MOpLGOuVpLtiWkS_su7EJ6NFILiB1qP3C_hR'),     // ClientID
-                env('PAYPAL_SECRET', 'ED8Ze7e2fa_fWBo3ey9e985rvTXR_dXIwBmjXc2g1ZXWh3R8UIIX6pubWsCA1lgBrsWNCM6xr-r8fUcT')      // ClientSecret
-            )
+            new \PayPal\Auth\OAuthTokenCredential($this->client, $this->secret)      // ClientSecret
     );
 
     $apiContext->setConfig([
-      'mode' => (env('PAYPAL_SANDBOX', true) ? 'sandbox' : 'live')
+      $this->sanbox ? 'sandbox' : 'live'
     ]);
 
     return $apiContext;
