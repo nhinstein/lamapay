@@ -49,7 +49,6 @@ class LamapayServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/config/lamapay.php' => base_path('/config/lamapay.php'),
             __DIR__ . '/Http/Controllers/Web' => app_path('Http/Controllers/Web'),
-            __DIR__ . '/Http/Controllers/Member' => app_path('Http/Controllers/Member'),
             __DIR__ . '/Repositories/' => app_path('Repositories'),
             __DIR__ . '/../Resources/Views/vendor/' => base_path('/resources/views/vendor/lamapay/')
         ], 'core');
