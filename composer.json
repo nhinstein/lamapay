@@ -14,7 +14,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Nhinstein\\Lamapay\\LadminServiceProvider"
+                "Nhinstein\\Lamapay\\LamapayServiceProvider"
             ],
             "aliases": {
                 "Lamapay": "Nhinstein\\Lamapay\\Lamapay"
