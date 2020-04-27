@@ -1,6 +1,6 @@
 <?php  
 
-namespace App\Helpers;
+namespace Nhinstein\Lamapay\Helpers;
 
 use PayPal\Api\Amount;
 use PayPal\Api\Details;

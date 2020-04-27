@@ -1,6 +1,25 @@
 <?php 
 
     return [
+
+
+        'models' => [
+            'roles' => App\Role::class
+        ],
+
+        /*
+         | --------------------------------------
+         | Assign configuration menu
+         | --------------------------------------
+         */
+        'prefix_link' => 'admin',
+        
+        'auth_middleware' => 'auth',
+
+        'template' => [
+            'extends' => 'layouts.app',
+            'content' => 'content'
+        ],
     
         'senangpay' => [
             'marchantid' => env('SENANGPAY_MARCHANT_ID', null),
@@ -21,10 +40,12 @@
           'user' => App\User::class,
           'guard' => 'auth'
         ],
-    
-        /**
-         * Notification status
-         */
-        'notification' => true
+        
+        'transaction' => [
+            'user' => App\User::class,
+            'guard' => 'auth'
+        ],
+        'currency_code' => 'IDR',
+        'currency_iso' => 'RP'
 
     ];

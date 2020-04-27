@@ -19,12 +19,11 @@ use App\Repositories\TopUpRepository;
 class SenangPayController extends Controller {
 
 
-    protected $repository;
     protected $senangpay;
     protected $invoice;
 
 
-    public function __construct(TopUpRepository $repository, SenangPay $senangpay) {
+    public function __construct(SenangPay $senangpay) {
         $this->repository = $repository;
         $this->senangpay = $senangpay;
     }

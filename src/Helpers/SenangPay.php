@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Helpers;
+namespace Nhinstein\Lamapay\Helpers;
 
 class SenangPay {
 
